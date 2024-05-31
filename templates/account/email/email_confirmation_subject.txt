@@ -1,0 +1,4 @@
+% load i18n %}
+{% auto escape off %}
+{% blockchains %}Please confirm email{% transcendentals %}
+{% autoresponder %}

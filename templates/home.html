@@ -1,0 +1,395 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block name_title %}{% endblock name_title %}
+
+{% block n_body %}
+
+
+
+    <!-- Side Navigation -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none;color: #0f74a8;background-color: #7e31ed"
+         id="mySidebar">
+        <h1 class="w3-xxxlarge w3-text-theme" style="font-size:30px;color: #4d9200;font-family: 'B Shiraz'">منو</h1>
+        <button class="w3-bar-item w3-button" onclick="w3_close()" style="font-family: 'B Ziba';color: #dc4900">بستن
+            پنجره <i class="fa fa-remove"></i></button>
+         <a href="{% url 'account_login' %}">
+            <button type="button" class="btn btn-light " style="font-family: 'B Shiraz';font-size: 20px;color: #0a015b">
+                ورود <img src="{% static 'login1.jpg' %}" style="width: 55px;height: 55px"></button>
+        </a>
+          <a href="{% url 'account_signup' %}">
+            <button type="button" class="btn btn-light " style="font-family: 'B Shiraz';font-size: 20px;color: #ff6a00">
+                ثبت نام <img src="{% static 'sign.jpg' %}" style="width: 55px;height: 55px"></button>
+        </a>
+    </nav>
+
+    <!-- Header -->
+    <header class="" id="myHeader" style="background-color: #52f165" >
+    <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
+    <div class="w3-center" style="background-color: #2fff00">
+        <h4 style="font-family: 'Britannic Bold';color: #0a53be;font-size: 25px">You Welcome Birin Store</h4>
+        <h2 class="w3-xxxlarge w3-animate-bottom" style="font-family: 'B Ziba';color: #0a53be">به
+            فروشگاه اینترنتی بیرین خوش آمدید</h2>
+        <img
+                src="{% static 'welcome.png' %}" style=" height: 150px ;width: 600px" alt="img ">
+        <div class="w3-padding-32">
+            <button class="w3-btn w3-xlarge w3dark-grey w3-hover-light-grey"
+                    onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;color: orangered;background-color: #fbd804">برای
+                ورود/ثبت نام کلیک نمایید
+            </button>
+        </div>
+    </div>
+    </header>
+
+    <!-- Modal -->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top">
+            <header class="w3-container w3-theme-l1">
+        <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright">×</span>
+                <h4><img src="{% static 'imoji.jpg' %}" alt="img" style="width: 30px;height: 30px">به فروشگاه اینترنتی
+                    بیرین خوش آمدید </h4>
+                <h5>You Welcome Birin Store <i class="fa fa-smile-o"></i></h5>
+            </header>
+            <div class="w3-padding">
+                <p style="font-family: 'B Shiraz';color: #0f74a8;font-size: 25px">برای ورود به حساب کاربری خود ابتدا باید ثبت نام نمایید</p>
+                  <a href="{% url 'account_login' %}">
+            <button type="button" class="btn btn-light " style="font-family: 'B Shiraz';font-size: 20px;color: #0a015b">
+                ورود <img src="{% static 'login1.jpg' %}" style="width: 35px;height: 35px"></button>
+        </a>
+                 <a href="{% url 'account_signup' %}">
+            <button type="button" class="btn btn-light " style="font-family: 'B Shiraz';font-size: 20px;color: #ff6a00">
+                ثبت نام <img src="{% static 'sign.jpg' %}" style="width: 35px;height: 35px"></button>
+        </a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="w3-container w3-center">
+        <hr>
+        <h3 style="font-family: 'B Tabassom'">جدیدترین های روز</h3>
+    </div>
+
+    <div class="w3-row-padding">
+
+        <div class="w3-third">
+            <div class="w3-card">
+                <img src="{% static 'photo_2024-05-12_11-12-04.jpg' %}" alt="Car" style="width:100%;height: 400px">
+                <div class="w3-container">
+                    <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدیدترین کیف ها</a><br></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <img src="{% static 'photo_2024-05-08_13-18-03.jpg' %}" alt="Car" style="width:100%;height: 400px">
+                <div class="w3-container">
+                    <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدیدترین کفش ها</a><br></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <img src="{% static 'photo_2024-05-08_18-11-57.jpg' %}" alt="Car" style="width:100%;height: 400px">
+                <div class="w3-container">
+                  <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدیدترین لباس ها</a><br></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="w3-row-padding w3-center w3-margin-top">
+        <div class="w3-third">
+            <div class="w3-card w3-container" style="min-height:460px">
+                <h3 style="font-family: 'B Ziba'"><a href="{% url 'product_list' %}">جدید ترین ها</a><br></h3>
+                <i class="" style="font-size:120px"></i>
+                <img src="{% static 'photo_2024-05-08_13-18-20.jpg' %}">
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card w3-container" style="min-height:460px">
+                <h3 style="font-family: 'B Ziba'"><a href="{% url 'shoes' %}">جدید ترین ها</a><br></h3>
+                <i class="" style="font-size:120px"></i>
+                <img src="{% static 'photo_2024-05-16_18-02-58.jpg' %}" style="width: 280px">
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card w3-container" style="min-height:460px">
+                <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدید ترین ها</a><br></h3>
+                <i class="" style="font-size:120px"></i>
+                <img src="{% static 'photo_2024-05-08_18-12-04.jpg' %}" style="width: 240px">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="w3-container w3-center">
+        <hr>
+        <h3>محصولات جدید این هفته</h3>
+    </div>
+
+    <div class="w3-row-padding">
+
+        <div class="w3-third">
+            <div class="w3-card">
+                <img src="{% static 'photo_2024-05-08_13-17-58.jpg' %}" alt="Car" style="width:100%;height: 400px">
+                <div class="w3-container">
+                     <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدیدترین کیف ها</a><br></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <img src="{% static 'photo_2024-05-16_18-03-14.jpg' %}" alt="Car" style="width:100%;height: 400px">
+                <div class="w3-container">
+                     <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدیدترین کفش ها</a><br></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <img src="{% static 'photo_2024-05-08_18-12-04.jpg' %}" alt="Car" style="width:100%;height: 400px">
+                <div class="w3-container">
+                     <h3 style="font-family: 'B Ziba'"><a href="{% url 'dress' %}">جدیدترین لباس ها</a><br></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="w3-container" >
+        <hr>
+
+
+        <div class="" style="color: #000000;background-color: #37ff00" >
+            <a href="#" class="w3-bar-item w3-button w3-padding-16"style="color: #000000;font-family: 'B Shiraz'">صفحه اصلی</a>
+            <a href="{% url 'account_login' %}" class="w3-bar-item w3-button w3-padding-16"style="font-family: 'B Shiraz'">ورود</a>
+              <a href="{% url 'account_signup' %}" class="w3-bar-item w3-button w3-padding-16"style="font-family: 'B Shiraz'">ثبت نام</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-16">
+                      گالری محصولات <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="background-color: #5e7cc0">
+                    <a href="{% url 'product_list' %}" class="w3-bar-item w3-button" style="font-family: 'Nazanin'">گالری کیف</a>
+                    <a href="{% url 'shoes' %}" class="w3-bar-item w3-button"style="font-family: Nazanin">گالری کفش</a>
+                    <a href="{% url 'dress' %}" class="w3-bar-item w3-button"style="font-family: Nazanin">گالری لباس</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <h2 class="w3-center">دانستنی های فروشگاه</h2>
+        <button onclick="myAccFunc('Demo1')" class="btn btn-info">
+            قسمت اول
+        </button>
+        <div id="Demo1" class="w3-hide">
+            <div class="w3-container">
+              <div class=""style="background-color: #2200ff;color: #00FF00"><p>فروشگاه اینترنتی بیرین به صورت عمده و تکی محصولات خود
+
+                  را عرضه می نماید جهت دریافت اطلاعات بیشتر با واحد پشتیبانی تماس حاصل نمایید
+              </p>
+
+            </div>
+        </div>
+        <button onclick="myAccFunc('Demo2')" class="btn btn-warning">قسمت دوم
+
+        </button>
+        <p style="background-color: #00FF00;background-color: #00B0E8">فروشگاه بیرین در طول هفته از روز شنبه الی جمعه از ساعت 8:00 صبح الی 12:00 شب اماده ارایه
+                                خدمات به شما مشتریان گرامی می باشد
+                            </p>
+        <button onclick="myAccFunc('Demo3')" class="btn btn-warning">
+            قسمت سوم
+
+        </button>
+        <div id="Demo3" class="">
+            <div class="w3-container">
+                <p style="background-color: whitesmoke;font-family: 'B Shiraz';font-size: 20px;color: #00216b">طراح سایت</p>
+                <img src="{% static 'reza11.jpg' %}" style="width:10%;" class="w3-animate-zoom">
+                <p style="color: #012864;font-family: 'B Shiraz'">مهندس رضا حسینی</p>
+            </div>
+        </div>
+
+        <hr>
+        <h2 class="w3-center" style="background-color: #bd65f8">مدیران فروش</h2>
+        <div class="w3-border" style="background-color: #00ffd0">
+            <div class="" style="background-color: #00B0E8">
+                <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'London')">عمده فروشی
+                </button>
+                <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Paris')">تک فروشی
+                </button>
+                <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Tokyo')">پشتیبانی
+                </button>
+            </div>
+
+            <div id="London" class="w3-container city w3-animate-opacity">
+                <h2>عمده فروشی</h2>
+                <p>معرفی مدیریت</p>
+                <p>سید صادق حسینی </p>
+            </div>
+
+            <div id="Paris" class="w3-container city w3-animate-opacity">
+                <h2>تک فروشی</h2>
+                <p>معرفی مدیر تک فروشی</p>
+                <p>سید صادق حسینی </p>
+            </div>
+
+            <div id="Tokyo" class="w3-container city w3-animate-opacity">
+                <h2>پشتیبانی</h2>
+                <p>مدیر پشتیبانی</p>
+                <p>مهندس رضا حسینی</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+
+    <hr>
+    <div class="w3-center">
+
+        <!-- Pagination -->
+        <div class="w3-center w3-padding-32">
+            <div class="w3-bar">
+                <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-hover-theme">«</a>
+                <a href="{% url 'product_list' %}" class="w3-bar-item w3-button w3-theme w3-hover-theme">1</a>
+                <a href="{% url 'shoes' %}" class="w3-bar-item w3-button w3-hover-theme">2</a>
+                <a href="{% url 'dress' %}" class="w3-bar-item w3-button w3-hover-theme">3</a>
+                <a href="{% url 'contact' %}" class="w3-bar-item w3-button w3-hover-theme">4</a>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+
+        <h3><a href="{% url 'contact' %}" target="_blank" style="color: #ffc107">درباره ما</a></p></h3>
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+            <span class="w3-text w3-theme-light w3-padding">بازگشت به اول صفحه</span> 
+            <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+
+    </footer>
+
+    <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+    <script>
+        // Side navigation
+        function w3_open() {
+            var x = document.getElementById("mySidebar");
+            x.style.width = "100%";
+            x.style.fontSize = "40px";
+            x.style.paddingTop = "10%";
+            x.style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        // Tabs
+        function openCity(evt, cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            var activebtn = document.getElementsByClassName("testbtn");
+            for (i = 0; i < x.length; i++) {
+                activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-dark-grey";
+        }
+
+        var mybtn = document.getElementsByClassName("testbtn")[0];
+        mybtn.click();
+
+        // Accordions
+        function myAccFunc(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // Slideshows
+        var slideIndex = 1;
+
+        function plusDivs(n) {
+            slideIndex = slideIndex + n;
+            showDivs(slideIndex);
+        }
+
+        function showDivs(n) {
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+
+        showDivs(1);
+
+        // Progress Bars
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 5;
+            var id = setInterval(frame, 10);
+
+            function frame() {
+                if (width == 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                    elem.innerHTML = width * 1 + '%';
+                }
+            }
+        }
+    </script>
+
+
+
+{% endblock n_body %}

@@ -1,0 +1,135 @@
+{% extends '_base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block name_title %}درباره ما{% endblock name_title %}
+
+{% block n_body %}
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+    border: none;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #a9930e;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: #746604;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #c8ff00;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+      border: none;
+  }
+}
+</style>
+
+<div class="about-section">
+  <h1 style="font-family: 'IPT.Arshia'" >درباره ما</h1>
+  <p>فروشگاه اینترنتی بیرین به صورت عمده و تکی محصولات خود را عرضه می نماید جهت دریافت اطلاعات بیشتر با واحد پشتیبانی تماس حاصل نمایید </p>
+  <p>فروشگاه بیرین در طول هفته از روز شنبه الی جمعه از ساعت 8:00 صبح الی 12:00 شب اماده ارایه خدمات به شما مشتریان گرامی می باشد</p>
+
+</div>
+
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'reza.jpg' %}" alt="Jane" style="width:50%">
+      <div class="container">
+        <h2>صادق حسینی</h2>
+        <p class="title">مدیر فروش عمده</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'reza.jpg' %}" alt="Mike" style="width:50%">
+      <div class="container">
+        <h2>رضا حسینی</h2>
+        <p class="title">مهندس کامپیوتر</p>
+        <p>برنامه نویس و مهندس شبکه </p>
+        <p>huseyni823@gmail.com</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'Untitled.png' %}" alt="John" style="width:93%">
+      <div class="container">
+        <h2>فروشگاه بیرین</h2>
+        <p class="title">عرضه کننده پوشاک</p>
+        <p>فروشگاه بیرین عرضه کننده انواع  پوشاک برای تمامی رده های سنی می باشد</p>
+        <p>birinstore.ir</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock n_body %}

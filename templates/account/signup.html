@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block name_title%}
+    ثبت نام
+{% endblock name_title %}
+
+{% block  n_body%}
+
+    <h1>Sign Up</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Sign Up">
+    </form>
+{% endblock n_body %}
