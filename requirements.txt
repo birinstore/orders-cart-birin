@@ -6,7 +6,10 @@ django-allauth==0.63.2
 django-bootstrap4==24.3
 django-ckeditor==6.7.1
 django-crispy-forms==2.1
+django-jalali-date==1.1.2
 django-js-asset==2.2.0
+jalali_core==1.0.0
+jdatetime==5.0.0
 pillow==10.3.0
 psycopg2-binary==2.9.9
 soupsieve==2.5

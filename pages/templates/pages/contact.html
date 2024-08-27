@@ -12,25 +12,25 @@
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #3a8921;}
+.w3-sidebar {width: 120px;background: #286cea;}
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
-<body class=""style="background-color: #511d5b">
+<body class=""style="background-color: #f7ff00">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"style="background-color: #a3fb6a">
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"style="background-color: #ffea00">
   <!-- Avatar image in top left corner -->
   <img src="{% static 'reza11.jpg' %}" style="width:100%">
   <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
-    <p>صفحه اصلی</p>
+    <p style="font-size: 15px">صفحه اصلی</p>
   </a>
   <a href="{% url 'contact' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-user w3-xxlarge"></i>
-    <p>درباره ما</p>
+    <p style="font-size: 15px">درباره ما</p>
   </a>
 {#  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">#}
 {#    <i class="fa fa-eye w3-xxlarge"></i>#}
@@ -38,7 +38,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 {#  </a>#}
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>ارتباط با ما</p>
+    <p style="font-size: 15px">ارتباط با ما</p>
   </a>
 </nav>
 
@@ -53,22 +53,29 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 {#</div>#}
 
 <!-- Page Content -->
-<div class="w3-padding-large" id="main" style="background-color: #5a0054">
+<div class="w3-padding-large" id="main" style="background-color: #0044f3">
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo" style="background-color: #00FF00"><span class="w3-hide-small">BIRIN </span> STORE</h1>
+    <h1 class="w3-jumbo" style="background-color: #00a6ff;color: #00FF00"><span class="w3-hide-small">BIRIN </span> STORE</h1>
     <p></p>
 {#    <img src="{% static 'reza11.jpg' %}" alt="boy" class="w3-image" width="992" height="1108">#}
   </header>
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about" >
-    <h2 class="w3-text-light-grey" >فروشگاه بیرین</h2>
-    <hr style="width:200px;background-color: #ffffff" class="w3-opacity">
-    <p style="color: #00FF00;font-size: 20px">  فروشگاه اینترنتی بیرین به صورت عمده و تکی محصولات خود
+    <h2 class="" style="color: #00FF00 ; font-family: 'B Tabassom';float: right ;font-size: 60px">فروشگاه بیرین</h2>
+{#        <hr style="width:200px;background-color: #00ff0d ;float: right" class="w3-opacity">#}
+      <br>
+      <br>
+
+      <br>
+
+      <br>
+
+    <p style="color: #8bfb00;font-size: 20px;float: right">  فروشگاه اینترنتی بیرین به صورت عمده و تکی محصولات خود
                   را عرضه می نماید جهت دریافت اطلاعات بیشتر با واحد پشتیبانی تماس حاصل نمایید
     </p>
-               <p style="color: #00FF00;font-size: 20px">فروشگاه بیرین در طول هفته از روز شنبه الی جمعه از ساعت 8:00 صبح الی 12:00 شب اماده ارایه
+               <p style="color: #5eff00;font-size: 20px;float: right">فروشگاه بیرین در طول هفته از روز شنبه الی جمعه از ساعت 8:00 صبح الی 12:00 شب اماده ارایه
                                 خدمات به شما مشتریان گرامی می باشد
                             </p>
 
@@ -190,15 +197,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Urmia, iran</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> شماره تماس
+      <p style="color: #00FF00"><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Urmia, iran</p>
+      <p style="color: #00FF00"><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> شماره تماس
           09144833644/09144833649 حسینی
       </p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> ایمیل:huseyni823@gmail.com</p>
+      <p style="color: #00FF00"><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> ایمیل:huseyni823@gmail.com</p>
     </div><br>
-    <p>چهت ارسال پیام لطفا فیلدهای زیر را تکمیل نمایید</p>
+    <p style="color: #00FF00">چهت ارسال پیام لطفا فیلدهای زیر را تکمیل نمایید</p>
 
-    <form action="/action_page.php" target="_blank">
+    <form action="" target="_blank" method="get">
+        {% csrf_token %}
+        {{ form|crispy }}
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
@@ -214,22 +223,24 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-      <i class="fa fa-telegram w3-hover-opacity"></i>
-    <p class="w3-medium">website <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">birinstore.ir</a></p>
+{#    <i class="fa fa-facebook-official w3-hover-opacity"></i>#}
+    <i class="fa fa-instagram w3-hover-opacity" style="color: #ffffff"></i>
+{#    <i class="fa fa-snapchat w3-hover-opacity"></i>#}
+{#    <i class="fa fa-pinterest-p w3-hover-opacity"></i>#}
+{#    <i class="fa fa-twitter w3-hover-opacity"></i>#}
+{#    <i class="fa fa-linkedin w3-hover-opacity"></i>#}
+
+      <i class="fa fa-telegram w3-hover-opacity" style=  "color: #00ff04 " size="50px" ></i>
+    <p style="color: #00FF00" class="w3-medium">website <a href="{% url 'about' %}" target="_blank" class="w3-hover-text-green">birinstore.ir</a></p>
   <!-- End footer -->
   </footer>
 
 <!-- END PAGE CONTENT -->
 </div>
 
-</body>
-</html>
+
+
+
 
 
 {% endblock n_body %}
